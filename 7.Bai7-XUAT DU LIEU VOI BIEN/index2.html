@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Quản lý Sinh viên</h2>
+
+    <!-- Form nhập liệu -->
+    <div id="studentForm">
+        <div class="form-group">
+            <label for="id">Mã SV: </label><br>
+            <input type="text" id="id" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Họ tên: </label><br>
+            <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Ngày sinh: </label><br>
+            <input type="date" id="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="gpa">Điểm TB: </label><br>
+            <input type="number" id="gpa" step="0.25" min="0" max="10" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email: </label><br>
+            <input type="email" id="email" required>
+        </div>
+        <button onclick="addStudent()">Thêm</button>
+        <button onclick="updateStudent()">Sửa</button>
+        <button onclick="clearForm()">Xóa Form</button>
+    </div>
+
+    <!-- Tìm kiếm -->
+    <div style="margin-top: 20px;">
+        <input type="text" id="searchQuery" placeholder="Tìm theo mã hoặc tên">
+        <button onclick="searchStudent()">Tìm kiếm</button>
+    </div>
+
+    <!-- Bảng hiển thị -->
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Mã Sinh viên</th>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Điểm TB</th>
+                <th>Email</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="studentList"></tbody>
+    </table>
+
+    <p id="message"></p>
+    <script src="./main.cs"></script>
+</body>
+
+</html>
